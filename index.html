@@ -7,33 +7,19 @@
   <meta name="description" content="Team Tech Auto Electric — Electrical & diagnostic specialists + complete mechanical repair. Bronx, NY. Call Walter: (718) 737-3036">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- ── PRELOADER ─────────────────────────────── -->
-  <div id="preloader">
-    <div class="pre-wrap">
-      <div class="pre-gears">
-        <i class="fas fa-cog pg1"></i>
-        <i class="fas fa-cog pg2"></i>
-      </div>
-      <p class="pre-name">TEAM<span>TECH</span></p>
-      <div class="pre-bar"><div class="pre-fill"></div></div>
-    </div>
-  </div>
-
   <!-- ── TOP BAR ───────────────────────────────── -->
   <div class="topbar">
     <div class="tb-inner">
       <div class="tb-left">
-        <i class="fas fa-map-marker-alt"></i>
-        <span>2373 Bathgate Ave, The Bronx, NY</span>
-        <span class="tb-sep">|</span>
-        <i class="fas fa-clock"></i>
-        <span class="t" data-en="Mon–Sat: 8am–7pm" data-es="Lun–Sáb: 8am–7pm">Mon–Sat: 8am–7pm</span>
+        <span><i class="fas fa-location-dot"></i>2373 Bathgate Ave, The Bronx, NY</span>
+        <span class="tb-sep">/</span>
+        <span class="t" data-en="Mon–Sat: 8am–7pm" data-es="Lun–Sáb: 8am–7pm"><i class="fas fa-clock"></i>Mon–Sat: 8am–7pm</span>
       </div>
       <div class="tb-right">
         <a href="tel:+17187373036" class="tb-phone"><i class="fas fa-phone"></i>(718) 737-3036</a>
@@ -49,21 +35,22 @@
   <nav id="nav">
     <div class="nav-inner">
       <a href="#home" class="brand">
-        <div class="brand-icon"><i class="fas fa-bolt"></i><i class="fas fa-wrench"></i></div>
+        <div class="brand-icon"><i class="fas fa-bolt"></i></div>
         <div class="brand-text">
-          <span>TEAM TECH</span>
-          <small>AUTO ELECTRIC</small>
+          <span>Team Tech</span>
+          <small class="t" data-en="Auto Electric" data-es="Auto Eléctrico">Auto Electric</small>
         </div>
       </a>
       <ul class="nav-links" id="navLinks">
         <li><a href="#home" class="t" data-en="Home" data-es="Inicio">Home</a></li>
         <li><a href="#services" class="t" data-en="Services" data-es="Servicios">Services</a></li>
+        <li><a href="#process" class="t" data-en="How It Works" data-es="Cómo Funciona">How It Works</a></li>
         <li><a href="#reviews" class="t" data-en="Reviews" data-es="Reseñas">Reviews</a></li>
         <li><a href="#info" class="t" data-en="Find Us" data-es="Encuéntranos">Find Us</a></li>
       </ul>
       <a href="tel:+17187373036" class="nav-cta">
-        <i class="fas fa-phone"></i>
         <span class="t" data-en="Call Now" data-es="Llamar">Call Now</span>
+        <i class="fas fa-arrow-right"></i>
       </a>
       <button class="ham" id="ham" aria-label="menu">
         <span></span><span></span><span></span>
@@ -71,46 +58,181 @@
     </div>
   </nav>
 
-  <!-- ── HERO ──────────────────────────────────── -->
-  <section id="home" class="hero">
-    <canvas id="canvas"></canvas>
-
-    <div class="hero-inner">
-      <div class="hero-badge">
-        <i class="fas fa-bolt"></i>
-        <span class="t" data-en="Specializing in Electrical &amp; Advanced Diagnostics" data-es="Especializados en Eléctrico y Diagnósticos Avanzados">Specializing in Electrical &amp; Advanced Diagnostics</span>
+  <!-- ── MOBILE MENU ───────────────────────────── -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mm-panel">
+      <div class="mm-top">
+        <div class="mm-brand">
+          <div class="brand-icon"><i class="fas fa-bolt"></i></div>
+          <span class="t" data-en="Menu" data-es="Menú">Menu</span>
+        </div>
+        <button class="mm-close" id="mmClose" aria-label="close menu"><i class="fas fa-xmark"></i></button>
       </div>
 
-      <h1 class="hero-h1">
-        <span class="h1-red t" data-en="Car Not Starting?" data-es="¿Auto No Enciende?">Car Not Starting?</span>
-        <span class="h1-gold t" data-en="Check Engine Light On?" data-es="¿Luz de Motor Encendida?">Check Engine Light On?</span>
-      </h1>
-      <p class="hero-diag t" data-en="We Diagnose It The Right Way" data-es="Lo Diagnosticamos de la Manera Correcta">We Diagnose It The Right Way</p>
-
-      <p class="hero-sub t" data-en="Reliable auto repair in the Bronx — fast diagnostics, honest prices, bilingual service." data-es="Reparación de autos de confianza en el Bronx — diagnósticos rápidos, precios honestos, servicio bilingüe.">Reliable auto repair in the Bronx — fast diagnostics, honest prices, bilingual service.</p>
-
-      <div class="hero-phones">
-        <a href="tel:+17187373036" class="ph-btn ph-main">
-          <div class="ph-pulse"><div class="phr p1"></div><div class="phr p2"></div><i class="fas fa-phone"></i></div>
-          <div><span class="t" data-en="Call Walter" data-es="Llama a Walter">Call Walter</span><strong>(718) 737-3036</strong></div>
+      <div class="mm-list">
+        <a href="#home" class="mm-item">
+          <div class="mm-icon"><i class="fas fa-house"></i></div>
+          <div class="mm-text">
+            <span class="mm-sub t" data-en="Overview" data-es="Resumen">Overview</span>
+            <strong class="t" data-en="Home" data-es="Inicio">Home</strong>
+          </div>
+          <i class="fas fa-chevron-right mm-chev"></i>
         </a>
-        <a href="tel:+17185891505" class="ph-btn ph-alt">
-          <i class="fas fa-phone"></i>
-          <div><span class="t" data-en="Also Call" data-es="También">Also Call</span><strong>(718) 589-1505</strong></div>
+        <a href="#services" class="mm-item">
+          <div class="mm-icon"><i class="fas fa-wrench"></i></div>
+          <div class="mm-text">
+            <span class="mm-sub t" data-en="What We Do" data-es="Lo Que Hacemos">What We Do</span>
+            <strong class="t" data-en="Services" data-es="Servicios">Services</strong>
+          </div>
+          <span class="mm-badge t" data-en="$20 Special" data-es="Especial $20">$20 Special</span>
+          <i class="fas fa-chevron-right mm-chev"></i>
+        </a>
+        <a href="#process" class="mm-item">
+          <div class="mm-icon"><i class="fas fa-diagram-project"></i></div>
+          <div class="mm-text">
+            <span class="mm-sub t" data-en="3 Simple Steps" data-es="3 Pasos Sencillos">3 Simple Steps</span>
+            <strong class="t" data-en="How It Works" data-es="Cómo Funciona">How It Works</strong>
+          </div>
+          <i class="fas fa-chevron-right mm-chev"></i>
+        </a>
+        <a href="#reviews" class="mm-item">
+          <div class="mm-icon"><i class="fas fa-star"></i></div>
+          <div class="mm-text">
+            <span class="mm-sub t" data-en="What People Say" data-es="Lo Que Dicen">What People Say</span>
+            <strong class="t" data-en="Reviews" data-es="Reseñas">Reviews</strong>
+          </div>
+          <i class="fas fa-chevron-right mm-chev"></i>
+        </a>
+        <a href="#info" class="mm-item">
+          <div class="mm-icon"><i class="fas fa-location-dot"></i></div>
+          <div class="mm-text">
+            <span class="mm-sub t" data-en="Address &amp; Map" data-es="Dirección y Mapa">Address &amp; Map</span>
+            <strong class="t" data-en="Find Us" data-es="Encuéntranos">Find Us</strong>
+          </div>
+          <i class="fas fa-chevron-right mm-chev"></i>
         </a>
       </div>
 
-      <div class="hero-trust">
-        <div class="trust-item"><i class="fas fa-bolt"></i><span class="t" data-en="Electrical Experts" data-es="Expertos Eléctricos">Electrical Experts</span></div>
-        <div class="trust-item"><i class="fas fa-oil-can"></i><span>$20 <span class="t" data-en="Oil Changes" data-es="Cambio de Aceite">Oil Changes</span></span></div>
-        <div class="trust-item"><i class="fas fa-comments"></i><span>EN / ES</span></div>
-        <div class="trust-item"><i class="fas fa-shield-alt"></i><span class="t" data-en="All Insurance" data-es="Todos los Seguros">All Insurance</span></div>
+      <div class="mm-bottom">
+        <a href="tel:+17187373036" class="btn btn-primary mm-call">
+          <span class="t" data-en="Call Walter" data-es="Llama a Walter">Call Walter</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+        <div class="lang-sw mm-lang">
+          <button class="lbtn active" data-lang="en">EN</button>
+          <button class="lbtn" data-lang="es">ES</button>
+        </div>
       </div>
     </div>
+  </div>
 
-    <a href="#services" class="hero-scroll">
-      <i class="fas fa-chevron-down"></i>
-    </a>
+  <!-- ── HERO ──────────────────────────────────── -->
+  <section id="home" class="hero">
+    <div class="hero-bg">
+      <div class="blob blob-blue"></div>
+      <div class="blob blob-mint"></div>
+      <svg class="hero-poly" width="420" height="420" viewBox="0 0 420 420" fill="none">
+        <polygon points="210,10 405,120 405,300 210,410 15,300 15,120" stroke="url(#pg)" stroke-width="1.5"/>
+        <defs><linearGradient id="pg" x1="0" y1="0" x2="420" y2="420"><stop offset="0" stop-color="#3385ff"/><stop offset="1" stop-color="#0dffc9"/></linearGradient></defs>
+      </svg>
+    </div>
+
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <div class="hero-badge">
+          <i class="fas fa-bolt"></i>
+          <span class="t" data-en="Specializing in Electrical &amp; Advanced Diagnostics" data-es="Especializados en Eléctrico y Diagnósticos Avanzados">Specializing in Electrical &amp; Advanced Diagnostics</span>
+        </div>
+
+        <h1 class="hero-h1">
+          <span class="t" data-en="Car Not Starting?" data-es="¿Auto No Enciende?">Car Not Starting?</span>
+          <span class="h1-grad t" data-en="Check Engine Light On?" data-es="¿Luz de Motor Encendida?">Check Engine Light On?</span>
+        </h1>
+        <p class="hero-diag t" data-en="We diagnose it the right way." data-es="Lo diagnosticamos de la manera correcta.">We diagnose it the right way.</p>
+
+        <p class="hero-sub t" data-en="Reliable auto repair in the Bronx — fast diagnostics, honest prices, bilingual service." data-es="Reparación de autos de confianza en el Bronx — diagnósticos rápidos, precios honestos, servicio bilingüe.">Reliable auto repair in the Bronx — fast diagnostics, honest prices, bilingual service.</p>
+
+        <div class="hero-btns">
+          <a href="tel:+17187373036" class="btn btn-primary">
+            <span class="t" data-en="Call Walter" data-es="Llama a Walter">Call Walter</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+          <a href="tel:+17185891505" class="btn btn-outline">
+            <span class="t" data-en="Also Call" data-es="También">Also Call</span>
+            <i class="fas fa-phone"></i>
+          </a>
+        </div>
+
+        <div class="hero-trust">
+          <div class="trust-item"><i class="fas fa-bolt"></i><span class="t" data-en="Electrical Experts" data-es="Expertos Eléctricos">Electrical Experts</span></div>
+          <div class="trust-item"><i class="fas fa-oil-can"></i><span>$20 <span class="t" data-en="Oil Changes" data-es="Cambio de Aceite">Oil Changes</span></span></div>
+          <div class="trust-item"><i class="fas fa-comments"></i><span>EN / ES</span></div>
+          <div class="trust-item"><i class="fas fa-shield-halved"></i><span class="t" data-en="All Insurance" data-es="Todos los Seguros">All Insurance</span></div>
+        </div>
+      </div>
+
+      <div class="hero-visual" data-reveal>
+        <div class="diag-card">
+          <div class="diag-card-hd">
+            <span class="diag-dot"></span>
+            <span class="t" data-en="Live Diagnostic" data-es="Diagnóstico en Vivo">Live Diagnostic</span>
+          </div>
+          <div class="diag-row"><i class="fas fa-gauge ok"></i><span class="t" data-en="Engine Scan" data-es="Escaneo de Motor">Engine Scan</span><em class="ok">OK</em></div>
+          <div class="diag-row"><i class="fas fa-car-battery ok"></i><span class="t" data-en="Battery" data-es="Batería">Battery</span><em class="ok">12.6V</em></div>
+          <div class="diag-row"><i class="fas fa-microchip warn"></i><span class="t" data-en="Check Engine Code" data-es="Código Check Engine">Check Engine Code</span><em class="warn t" data-en="Reading…" data-es="Leyendo…">Reading…</em></div>
+          <div class="diag-row"><i class="fas fa-bolt ok"></i><span class="t" data-en="Alternator" data-es="Alternador">Alternator</span><em class="ok t" data-en="Charging" data-es="Cargando">Charging</em></div>
+          <a href="tel:+17187373036" class="diag-cta t" data-en="Book a Diagnostic →" data-es="Reservar Diagnóstico →">Book a Diagnostic →</a>
+        </div>
+        <div class="diag-badge">
+          <i class="fas fa-clock"></i>
+          <div><strong class="t" data-en="Fast" data-es="Rápido">Fast</strong><span class="t" data-en="Turnaround" data-es="Entrega">Turnaround</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WHY US ─────────────────────────────────── -->
+  <section class="why-us">
+    <div class="container">
+      <div class="sec-head">
+        <span class="sec-tag t" data-en="Why Choose Us" data-es="Por Qué Elegirnos">Why Choose Us</span>
+        <h2 class="sec-title"><span class="t" data-en="Honest Repairs, Done Right" data-es="Reparaciones Honestas, Bien Hechas">Honest Repairs, Done Right</span></h2>
+        <p class="sec-sub t" data-en="Everything we do is built around fast, honest, bilingual service for the Bronx." data-es="Todo lo que hacemos se basa en un servicio rápido, honesto y bilingüe para el Bronx.">Everything we do is built around fast, honest, bilingual service for the Bronx.</p>
+      </div>
+
+      <div class="why-grid">
+        <div class="why-card" data-reveal>
+          <div class="why-icon"><i class="fas fa-bolt"></i></div>
+          <h3 class="t" data-en="Electrical Experts" data-es="Expertos Eléctricos">Electrical Experts</h3>
+          <p class="t" data-en="We find electrical faults other shops can't — from wiring to modules." data-es="Encontramos fallas eléctricas que otros talleres no pueden — desde cableado hasta módulos.">We find electrical faults other shops can't — from wiring to modules.</p>
+        </div>
+        <div class="why-card" data-reveal>
+          <div class="why-icon"><i class="fas fa-gauge-high"></i></div>
+          <h3 class="t" data-en="Fast Diagnostics" data-es="Diagnósticos Rápidos">Fast Diagnostics</h3>
+          <p class="t" data-en="Advanced computer scanning gets you an accurate answer, quickly." data-es="El escaneo computarizado avanzado te da una respuesta precisa y rápida.">Advanced computer scanning gets you an accurate answer, quickly.</p>
+        </div>
+        <div class="why-card" data-reveal>
+          <div class="why-icon"><i class="fas fa-hand-holding-dollar"></i></div>
+          <h3 class="t" data-en="Honest Pricing" data-es="Precios Honestos">Honest Pricing</h3>
+          <p class="t" data-en="Free estimates, no upselling — just straight answers about your car." data-es="Estimados gratis, sin ventas adicionales — solo respuestas claras sobre tu auto.">Free estimates, no upselling — just straight answers about your car.</p>
+        </div>
+        <div class="why-card" data-reveal>
+          <div class="why-icon"><i class="fas fa-comments"></i></div>
+          <h3 class="t" data-en="Bilingual Service" data-es="Servicio Bilingüe">Bilingual Service</h3>
+          <p class="t" data-en="We explain every repair clearly in English or Spanish." data-es="Explicamos cada reparación claramente en inglés o español.">We explain every repair clearly in English or Spanish.</p>
+        </div>
+        <div class="why-card" data-reveal>
+          <div class="why-icon"><i class="fas fa-shield-halved"></i></div>
+          <h3 class="t" data-en="All Insurance Accepted" data-es="Todos los Seguros Aceptados">All Insurance Accepted</h3>
+          <p class="t" data-en="We work with every insurance provider to get you back on the road." data-es="Trabajamos con todas las aseguradoras para que vuelvas a la carretera.">We work with every insurance provider to get you back on the road.</p>
+        </div>
+        <div class="why-card" data-reveal>
+          <div class="why-icon"><i class="fas fa-location-dot"></i></div>
+          <h3 class="t" data-en="Locally Owned — Bronx, NY" data-es="Propiedad Local — Bronx, NY">Locally Owned — Bronx, NY</h3>
+          <p class="t" data-en="A neighborhood shop on Bathgate Ave you can walk in and trust." data-es="Un taller del vecindario en Bathgate Ave en el que puedes confiar.">A neighborhood shop on Bathgate Ave you can walk in and trust.</p>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- ── SERVICES ───────────────────────────────── -->
@@ -119,13 +241,13 @@
       <div class="sec-head">
         <span class="sec-tag t" data-en="What We Do" data-es="Lo Que Hacemos">What We Do</span>
         <h2 class="sec-title"><span class="t" data-en="Complete Auto Services" data-es="Servicios Automotrices Completos">Complete Auto Services</span></h2>
-        <p class="sec-sub t" data-en="Electrical specialists + full mechanical repair under one roof" data-es="Especialistas eléctricos + reparación mecánica completa bajo un mismo techo">Electrical specialists + full mechanical repair under one roof</p>
+        <p class="sec-sub t" data-en="Electrical specialists + full mechanical repair under one roof." data-es="Especialistas eléctricos + reparación mecánica completa bajo un mismo techo.">Electrical specialists + full mechanical repair under one roof.</p>
       </div>
 
       <div class="svc-wrap">
         <!-- Electrical -->
         <div class="svc-col" data-reveal>
-          <div class="svc-col-hd elec">
+          <div class="svc-col-hd">
             <i class="fas fa-bolt"></i>
             <div>
               <h3 class="t" data-en="Diagnostics &amp; Electrical" data-es="Diagnósticos y Eléctrico">Diagnostics &amp; Electrical</h3>
@@ -144,7 +266,7 @@
 
         <!-- Mechanical -->
         <div class="svc-col" data-reveal>
-          <div class="svc-col-hd mech">
+          <div class="svc-col-hd">
             <i class="fas fa-wrench"></i>
             <div>
               <h3 class="t" data-en="Complete Mechanical Repair" data-es="Reparación Mecánica Completa">Complete Mechanical Repair</h3>
@@ -164,9 +286,9 @@
       </div>
 
       <div class="svc-footer">
-        <a href="tel:+17187373036" class="btn-red">
-          <i class="fas fa-phone-volume"></i>
+        <a href="tel:+17187373036" class="btn btn-primary">
           <span class="t" data-en="Call for a Free Estimate" data-es="Llama para un Estimado Gratis">Call for a Free Estimate</span>
+          <i class="fas fa-arrow-right"></i>
         </a>
         <span class="svc-note t" data-en="Ask for Walter · All Insurance Accepted" data-es="Pregunte por Walter · Todos los Seguros Aceptados">Ask for Walter · All Insurance Accepted</span>
       </div>
@@ -181,9 +303,41 @@
         <strong>$20 <span class="t" data-en="OIL CHANGE LABOR SPECIAL" data-es="ESPECIAL MANO DE OBRA CAMBIO DE ACEITE">OIL CHANGE LABOR SPECIAL</span></strong>
         <span class="t" data-en="Parts extra · Walk-ins welcome · Fast service" data-es="Partes adicionales · Sin cita · Servicio rápido">Parts extra · Walk-ins welcome · Fast service</span>
       </div>
-      <a href="tel:+17187373036" class="promo-btn t" data-en="Book Now" data-es="Llama Ahora">Book Now</a>
+      <a href="tel:+17187373036" class="btn btn-light">
+        <span class="t" data-en="Book Now" data-es="Llama Ahora">Book Now</span>
+        <i class="fas fa-arrow-right"></i>
+      </a>
     </div>
   </div>
+
+  <!-- ── HOW IT WORKS ───────────────────────────── -->
+  <section id="process" class="process">
+    <div class="container">
+      <div class="sec-head">
+        <span class="sec-tag t" data-en="Simple Steps" data-es="Pasos Sencillos">Simple Steps</span>
+        <h2 class="sec-title"><span class="t" data-en="How It Works" data-es="Cómo Funciona">How It Works</span></h2>
+        <p class="sec-sub t" data-en="From the first call to driving off the lot." data-es="Desde la primera llamada hasta salir manejando.">From the first call to driving off the lot.</p>
+      </div>
+
+      <div class="proc-grid">
+        <div class="proc-card" data-reveal>
+          <div class="proc-num">01</div>
+          <h3 class="t" data-en="Call or Walk In" data-es="Llama o Visítanos">Call or Walk In</h3>
+          <p class="t" data-en="Reach Walter at (718) 737-3036, or stop by our Bathgate Ave shop." data-es="Llama a Walter al (718) 737-3036, o visita nuestro taller en Bathgate Ave.">Reach Walter at (718) 737-3036, or stop by our Bathgate Ave shop.</p>
+        </div>
+        <div class="proc-card" data-reveal>
+          <div class="proc-num">02</div>
+          <h3 class="t" data-en="We Diagnose It Right" data-es="Lo Diagnosticamos Bien">We Diagnose It Right</h3>
+          <p class="t" data-en="Advanced computer scanning pinpoints the real issue — electrical or mechanical." data-es="El escaneo computarizado avanzado localiza el problema real — eléctrico o mecánico.">Advanced computer scanning pinpoints the real issue — electrical or mechanical.</p>
+        </div>
+        <div class="proc-card" data-reveal>
+          <div class="proc-num">03</div>
+          <h3 class="t" data-en="Honest Fix, Fair Price" data-es="Reparación Honesta, Precio Justo">Honest Fix, Fair Price</h3>
+          <p class="t" data-en="Free estimate first — no surprises. All insurance accepted." data-es="Estimado gratis primero — sin sorpresas. Todos los seguros aceptados.">Free estimate first — no surprises. All insurance accepted.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- ── REVIEWS ────────────────────────────────── -->
   <section id="reviews" class="reviews">
@@ -229,12 +383,13 @@
     <div class="container">
       <div class="info-grid">
         <div class="info-left" data-reveal>
-          <h2 class="sec-title" style="text-align:left;margin-bottom:24px">
+          <span class="sec-tag t" data-en="Find Us" data-es="Encuéntranos">Find Us</span>
+          <h2 class="sec-title info-title">
             <span class="t" data-en="Find Us in the Bronx" data-es="Encuéntranos en el Bronx">Find Us in the Bronx</span>
           </h2>
 
           <a href="tel:+17187373036" class="call-card">
-            <div class="cc-pulse"><div class="ccr c1"></div><div class="ccr c2"></div><i class="fas fa-phone"></i></div>
+            <i class="fas fa-phone"></i>
             <div><p class="t" data-en="Call Walter" data-es="Llama a Walter">Call Walter</p><strong>(718) 737-3036</strong></div>
           </a>
           <a href="tel:+17185891505" class="call-card call-card-2">
@@ -243,7 +398,7 @@
           </a>
 
           <div class="info-items">
-            <div class="ii"><i class="fas fa-map-marker-alt"></i><div><strong class="t" data-en="Address" data-es="Dirección">Address</strong><span>2373 Bathgate Ave, The Bronx, NY</span></div></div>
+            <div class="ii"><i class="fas fa-location-dot"></i><div><strong class="t" data-en="Address" data-es="Dirección">Address</strong><span>2373 Bathgate Ave, The Bronx, NY</span></div></div>
             <div class="ii"><i class="fas fa-clock"></i><div><strong class="t" data-en="Hours" data-es="Horario">Hours</strong><span class="t" data-en="Mon–Sat: 8am–7pm · Sun: Closed" data-es="Lun–Sáb: 8am–7pm · Dom: Cerrado">Mon–Sat: 8am–7pm · Sun: Closed</span></div></div>
             <div class="ii"><i class="fas fa-envelope"></i><div><strong>Email</strong><span><a href="mailto:TeamTech2373@gmail.com">TeamTech2373@gmail.com</a></span></div></div>
             <div class="ii"><i class="fab fa-instagram"></i><div><strong>Instagram</strong><span><a href="https://instagram.com/teamtech2373" target="_blank">@teamtech2373</a></span></div></div>
@@ -260,14 +415,30 @@
     </div>
   </section>
 
+  <!-- ── FINAL CTA ──────────────────────────────── -->
+  <section class="final-cta">
+    <div class="container final-cta-inner">
+      <div>
+        <span class="sec-tag t" data-en="Get Back On The Road" data-es="Vuelve a la Carretera">Get Back On The Road</span>
+        <h2 class="sec-title final-title">
+          <span class="t" data-en="Ready When You Are" data-es="Listos Cuando Tú Lo Estés">Ready When You Are</span>
+        </h2>
+        <p class="sec-sub final-sub t" data-en="Call Walter now for a free estimate — fast, honest, bilingual auto repair in the Bronx." data-es="Llama a Walter ahora para un estimado gratis — reparación de autos rápida, honesta y bilingüe en el Bronx.">Call Walter now for a free estimate — fast, honest, bilingual auto repair in the Bronx.</p>
+      </div>
+      <a href="tel:+17187373036" class="btn btn-primary btn-lg">
+        <span class="t" data-en="Call (718) 737-3036" data-es="Llama (718) 737-3036">Call (718) 737-3036</span>
+        <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+  </section>
+
   <!-- ── FOOTER ─────────────────────────────────── -->
   <footer class="footer">
     <div class="container">
       <div class="foot-grid">
         <div class="foot-brand">
-          <div class="brand"><div class="brand-icon"><i class="fas fa-bolt"></i><i class="fas fa-wrench"></i></div><div class="brand-text"><span>TEAM TECH</span><small>AUTO ELECTRIC</small></div></div>
+          <div class="brand"><div class="brand-icon"><i class="fas fa-bolt"></i></div><div class="brand-text"><span>Team Tech</span><small class="t" data-en="Auto Electric" data-es="Auto Eléctrico">Auto Electric</small></div></div>
           <p class="t" data-en="Your local car service shop. Electrical specialists + complete mechanical repair in the Bronx." data-es="Tu taller de confianza. Especialistas eléctricos + reparación mecánica completa en el Bronx.">Your local car service shop. Electrical specialists + complete mechanical repair in the Bronx.</p>
-          <div class="mex-flag"><div></div><div></div><div></div></div>
         </div>
         <div class="foot-col">
           <h4 class="t" data-en="Services" data-es="Servicios">Services</h4>
@@ -283,14 +454,14 @@
           <h4 class="t" data-en="Contact" data-es="Contacto">Contact</h4>
           <p><i class="fas fa-phone"></i><a href="tel:+17187373036">(718) 737-3036</a></p>
           <p><i class="fas fa-phone"></i><a href="tel:+17185891505">(718) 589-1505</a></p>
-          <p><i class="fas fa-map-marker-alt"></i>2373 Bathgate Ave, Bronx, NY</p>
+          <p><i class="fas fa-location-dot"></i>2373 Bathgate Ave, Bronx, NY</p>
           <p><i class="fas fa-envelope"></i><a href="mailto:TeamTech2373@gmail.com">TeamTech2373@gmail.com</a></p>
           <p><i class="fab fa-instagram"></i><a href="https://instagram.com/teamtech2373" target="_blank">@teamtech2373</a></p>
         </div>
       </div>
       <div class="foot-bottom">
         <p>&copy; 2025 Team Tech Auto Electric · 2373 Bathgate Ave, The Bronx, NY</p>
-        <p class="t" data-en="Reparación de autos de confianza en el Bronx" data-es="Trusted auto repair in the Bronx">Reparación de autos de confianza en el Bronx</p>
+        <p class="t" data-en="Trusted auto repair in the Bronx" data-es="Reparación de autos de confianza en el Bronx">Trusted auto repair in the Bronx</p>
       </div>
     </div>
   </footer>

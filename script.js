@@ -1,10 +1,5 @@
 'use strict';
 
-/* ── PRELOADER ─────────────────────────────────── */
-window.addEventListener('load', () => {
-  setTimeout(() => document.getElementById('preloader').classList.add('done'), 1800);
-});
-
 /* ── LANGUAGE TOGGLE ───────────────────────────── */
 let lang = localStorage.getItem('tt-lang') || 'en';
 
@@ -29,96 +24,47 @@ applyLang(lang);
 /* ── NAVBAR ────────────────────────────────────── */
 const nav  = document.getElementById('nav');
 const ham  = document.getElementById('ham');
-const links = document.getElementById('navLinks');
 
 window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 60);
+  nav.classList.toggle('scrolled', window.scrollY > 40);
 });
+
+/* ── MOBILE MENU ───────────────────────────────── */
+const mobileMenu = document.getElementById('mobileMenu');
+const mmClose     = document.getElementById('mmClose');
+
+function openMobileMenu() {
+  mobileMenu.classList.add('open');
+  ham.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeMobileMenu() {
+  mobileMenu.classList.remove('open');
+  ham.classList.remove('open');
+  document.body.style.overflow = '';
+}
 
 ham.addEventListener('click', () => {
-  ham.classList.toggle('open');
-  links.classList.toggle('open');
+  mobileMenu.classList.contains('open') ? closeMobileMenu() : openMobileMenu();
 });
 
-links.querySelectorAll('a').forEach(a => {
-  a.addEventListener('click', () => {
-    ham.classList.remove('open');
-    links.classList.remove('open');
-  });
+mmClose.addEventListener('click', closeMobileMenu);
+
+/* Close when tapping the blurred backdrop (outside the panel) */
+mobileMenu.addEventListener('click', (e) => {
+  if (e.target === mobileMenu) closeMobileMenu();
 });
 
-/* ── CANVAS PARTICLES ──────────────────────────── */
-(function () {
-  const canvas = document.getElementById('canvas');
-  const ctx    = canvas.getContext('2d');
-  let W, H, pts = [];
+/* Close on Escape */
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && mobileMenu.classList.contains('open')) closeMobileMenu();
+});
 
-  const COLORS = ['rgba(204,26,26,', 'rgba(240,163,0,', 'rgba(221,227,238,'];
-
-  function resize() {
-    W = canvas.width  = canvas.offsetWidth;
-    H = canvas.height = canvas.offsetHeight;
-  }
-
-  function rand(a, b) { return Math.random() * (b - a) + a; }
-
-  class Pt {
-    constructor() { this.reset(); }
-    reset() {
-      this.x  = rand(0, W);
-      this.y  = rand(0, H);
-      this.vx = rand(-.4, .4);
-      this.vy = rand(-.4, .4);
-      this.r  = rand(1, 2.5);
-      this.c  = COLORS[Math.floor(Math.random() * COLORS.length)];
-      this.a  = rand(.3, .8);
-    }
-    update() {
-      this.x += this.vx;
-      this.y += this.vy;
-      if (this.x < 0 || this.x > W) this.vx *= -1;
-      if (this.y < 0 || this.y > H) this.vy *= -1;
-    }
-    draw() {
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
-      ctx.fillStyle = this.c + this.a + ')';
-      ctx.fill();
-    }
-  }
-
-  function init() {
-    resize();
-    const count = Math.min(80, Math.floor((W * H) / 12000));
-    pts = Array.from({ length: count }, () => new Pt());
-  }
-
-  function draw() {
-    ctx.clearRect(0, 0, W, H);
-    for (let i = 0; i < pts.length; i++) {
-      pts[i].update();
-      pts[i].draw();
-      for (let j = i + 1; j < pts.length; j++) {
-        const dx = pts[i].x - pts[j].x;
-        const dy = pts[i].y - pts[j].y;
-        const d  = Math.sqrt(dx * dx + dy * dy);
-        if (d < 130) {
-          ctx.beginPath();
-          ctx.moveTo(pts[i].x, pts[i].y);
-          ctx.lineTo(pts[j].x, pts[j].y);
-          ctx.strokeStyle = 'rgba(255,255,255,' + (1 - d / 130) * .08 + ')';
-          ctx.lineWidth = .8;
-          ctx.stroke();
-        }
-      }
-    }
-    requestAnimationFrame(draw);
-  }
-
-  window.addEventListener('resize', () => { resize(); pts.forEach(p => p.reset()); });
-  init();
-  draw();
-})();
+/* Close after tapping any menu link */
+mobileMenu.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', closeMobileMenu);
+});
 
 /* ── REVIEW SLIDER ─────────────────────────────── */
 (function () {
