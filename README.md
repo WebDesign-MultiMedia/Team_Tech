@@ -6,6 +6,7 @@ Business website for **Team Tech Auto Electric**, an auto repair and electrical 
 
 ## Live Business Info
 https://webdesign-multimedia.github.io/HTML_CSS_JS/TeamTech/
+https://webdesign-multimedia.github.io/Team_Tech/
 | | |
 |---|---|
 | **Phone 1** | (718) 737-3036 — Ask for Walter |
